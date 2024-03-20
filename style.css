@@ -7,27 +7,27 @@
 
 @font-face {
     font-family: 'Cormorant Bold';
-    src: url(assets/fonts/Cormorant\ SC\ Bold.woff2);
+    src: url(assets/fonts/Cormorant\ Bold.woff2);
 }
 
 @font-face {
     font-family: 'Cormorant Semi-Bold';
-    src: url(assets/fonts/Cormorant\ SC\ SemiBold.woff2);
+    src: url(assets/fonts/Cormorant\ SemiBold.woff2);
 }
 
 @font-face {
     font-family: 'Cormorant Regular';
-    src: url(assets/fonts/Cormorant\ SC\ Regular.woff2);
+    src: url(assets/fonts/Cormorant\ Regular.woff2);
 }
 
 @font-face {
     font-family: 'Cormorant Medium';
-    src: url(assets/fonts/Cormorant\ SC\ Medium.woff2);
+    src: url(assets/fonts/Cormorant\ Medium.woff2);
 }
 
 @font-face {
     font-family: 'Cormorant Light';
-    src: url(assets/fonts/Cormorant\ SC\ Light.woff2);
+    src: url(assets/fonts/Cormorant\ Light.woff2);
 }
 
 * {
@@ -98,15 +98,28 @@ main {
     padding: 2em;
     border-radius: 10px;
     font-family: 'Cormorant Regular';
-    background-image: url(assets/images/bg-main.jpg);
     margin-block: 2em;
+}
+
+.main_page_preview {
+    background-image: url(assets/images/bg-main.jpg);
+}
+
+.contacts_preview {
+    background-image: url(assets/images/contacts-bg.jpg);
+    background-position: left bottom;
+    background-size: cover;
 }
 
 .preview_wrapper {
     width: 70%;
     border-radius: inherit;
+    padding-inline: 2em;
+}
+
+.main_page_preview_wrapper {
     background-color: rgb(64, 46, 42, 0.7);
-    padding: 2em;
+    padding-block: 2em;
 }
 
 h2 {
@@ -188,6 +201,29 @@ h3 {
     border-radius: inherit;
     box-shadow: 
     2px 2px 10px 3px rgba(0,0,0,0.3);
+}
+
+/* Contacts page */
+
+.links {
+    margin-top: 2em;
+    gap: 1em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.contact_logo {
+    width: 40px;
+    border-radius: 50%;
+}
+.phone {
+    padding: 10px;
+    background-color: white;
 }
 
 
