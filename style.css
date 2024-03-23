@@ -72,6 +72,7 @@ nav a:hover, nav a:focus  {
 main {
     padding-inline: 2em;
     color: #fff;
+    overflow-x: hidden;
 }
 
 .preview {
@@ -241,7 +242,7 @@ h1, h2, h3, nav a {
     border-radius: inherit;
 }
 
-.gallery_item > img {
+.gallery_image {
     object-fit: cover;
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -249,13 +250,17 @@ h1, h2, h3, nav a {
     cursor: pointer;
 }
 
-.gallery_item > img:focus, .gallery_item > img:hover {
-    position: absolute;
-    scale: 1.3;
+/* Gallery animation */
+
+.img_zoomed {
+    position: fixed;
     left: 50%;
-    translate: -50%;
-    z-index: 4;
+    top: 50%;
+    transform: translate(-50%, -50%);
     transition: all 0.4s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
 }
 
 /* Products page */

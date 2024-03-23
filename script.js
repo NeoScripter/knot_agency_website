@@ -21,10 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 console.log(src);
                 const img = await loadImage(src); 
+                img.classList.add('gallery_image');
                 const imageWrapper = document.createElement('div');
                 imageWrapper.classList.add('gallery_item');
                 imageWrapper.appendChild(img);
                 carouselContainer.appendChild(imageWrapper);
+
+                img.addEventListener('click', () => {
+                    img.classList.toggle('img_zoomed');
+                });
             } catch (error) {
                 console.error(error);
                 break; 
