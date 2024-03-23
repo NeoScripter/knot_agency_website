@@ -15,6 +15,11 @@
     src: url(assets/fonts/vag_rounded.ttf);
 }
 
+@font-face {
+    font-family: 'Vag Rounded Backup';
+    src: url(assets/fonts/VAG\ Round\ Cyrillic.eot);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,8 +27,12 @@
     word-wrap: break-word;
 }
 
+img {
+    max-width: 100%;
+}
+
 body {
-    font-family: 'Vag Rounded', sans-serif;
+    font-family: 'Vag Rounded', 'Vag Rounded Backup', sans-serif;
     min-height: 100vh;
     font-size: 1rem;
     background: linear-gradient(to right, var(--black-gr1) 20%, var(--black-gr2));
@@ -41,15 +50,14 @@ body {
 ul {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 2em;
+    align-items: center;
+    justify-content: center;
 }
 
 li {
     list-style: none;
-}
-
-li:not(:first-of-type) {
-    margin-left: 2em;
+    margin-inline: 1.2em;
+    padding-top: 0.5em;
 }
 
 h1 {
@@ -64,8 +72,34 @@ nav a {
 }
 
 nav a:hover, nav a:focus  {
-    color: var(--primary-font-color);
+    text-decoration: underline;
+    text-decoration-color: var(--primary-font-color);
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    outline: none;
 }
+
+.image_placeholder {
+    max-width: 20rem;
+}
+
+.prehidden {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .primary_nav {
+        flex-direction: column;
+    }
+    .left_nav {
+        display: none;
+    }
+    .prehidden {
+        display: block;
+    }
+}
+
 
 /* Body */
 
@@ -81,7 +115,7 @@ main {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-family: 'Vag Rounded', sans-serif;
+    font-family: 'Vag Rounded', 'Vag Rounded Backup', sans-serif;
     margin-block: 2em;
     text-align: center;
 }
@@ -110,12 +144,8 @@ main {
 
 h2 {
     text-align: center;
-    text-shadow: 1px 1px 2px #aaa;
 }
 
-h3 {
-    text-shadow: 1px 1px 2px #aaa;
-}
 
 h1, h2, h3, nav a {
     text-transform: uppercase;
@@ -125,51 +155,6 @@ h1, h2, h3, nav a {
     margin-bottom: 1em;
     display: flex;
     justify-content: center;
-}
-
-.border_wrapper {
-    flex: 40%;
-}
-
-.border_wrapper > * {
-    height: 48%;
-}
-
-.left > * {
-    margin: 0 1em 2px auto;
-}
-
-.right > * {
-    margin: 0 auto 2px 1em;
-}
-
-.upper_border {
-    width: 4em;
-    border-bottom: 3px solid var(--primary-font-color);
-}
-
-.lower_border {
-    width: 3em;
-    border-top: 2px solid var(--primary-font-color);
-}
-
-.logo {
-    width:80%;
-}
-
-.logo_span {
-    font-size: 0.8rem;
-    font-family: 'Cormorant Light';
-}
-
-.image_placeholder {
-    width: 30%;
-    color: var(--primary-font-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 .subsection {
