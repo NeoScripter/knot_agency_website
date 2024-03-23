@@ -1,31 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainer = document.getElementById('gallery');
+    const images = [];
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default link action
-            const href = this.getAttribute('href');
+    for (let i = 1; i < 50; i++) {
+        const newPathToImage = `assets/portfolio/image (${i}).jpg`;
+        images.push(newPathToImage);
+    }
 
-            fetch(href)
-                .then(response => response.text())
-                .then(html => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    const newMain = doc.querySelector('main');
-
-                    // Replace the main content
-                    document.querySelector('main').innerHTML = newMain.innerHTML;
-
-                    // Update the browser's address bar
-                    window.history.pushState(null, '', href);
-                })
-                .catch(error => {
-                    console.error('Error fetching the page: ', error);
-                });
+    function loadImage(src) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => reject(new Error(`Failed to load image at ${src}`));
+            img.src = src;
         });
-    });
-
-    window.addEventListener('popstate', () => {
-        window.location.reload();
-    });
+    }
+    
+    async function processImagesSequentially(images) {
+        for (let src of images) {
+            try {
+                console.log(src);
+                const img = await loadImage(src); 
+                const imageWrapper = document.createElement('div');
+                imageWrapper.classList.add('gallery_item');
+                imageWrapper.appendChild(img);
+                carouselContainer.appendChild(imageWrapper);
+            } catch (error) {
+                console.error(error);
+                break; 
+            }
+        }
+    }
+    
+    processImagesSequentially(images);
 });
