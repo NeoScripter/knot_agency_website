@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const carouselContainer = document.getElementById('gallery');
     const images = [];
 
-    for (let i = 1; i < 50; i++) {
+    for (let i = 1; i < 120; i++) {
         const newPathToImage = `assets/portfolio/image (${i}).jpg`;
         images.push(newPathToImage);
     }
@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 img.addEventListener('click', () => {
                     img.classList.toggle('img_zoomed');
+                });
+                img.setAttribute('tabindex', '0');
+                img.addEventListener('keydown', (event) => {
+                    if (event.key === "Escape") {
+                        img.classList.remove('img_zoomed');
+                    }
                 });
             } catch (error) {
                 console.error(error);

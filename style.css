@@ -268,6 +268,7 @@ h1, h2, h3, nav a {
     aspect-ratio: 1 / 1;
     border-radius: inherit;
     cursor: pointer;
+    outline: none;
 }
 
 /* Gallery animation */
