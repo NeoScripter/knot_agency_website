@@ -71,9 +71,26 @@ li {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: var(--fs-4);
     line-height: 0.8;
     text-align: center;
+}
+
+h2 {
+    font-size: var(--fs-3);
+    text-align: center;
+}
+
+h3 {
+    font-size: var(--fs-2);
+}
+
+h4 {
+    font-size: var(--fs-1);
+}
+
+p {
+    font-size: var(--fs-0);
 }
 
 nav a {
@@ -165,10 +182,6 @@ main {
 .main_page_preview_wrapper {
     background-color: rgb(20, 20, 20, 0.7);
     padding: 2em;
-}
-
-h2 {
-    text-align: center;
 }
 
 
@@ -288,7 +301,7 @@ h1, h2, h3, nav a {
 .products_preview_wrapper {
     background-color: var(--grey-bg);
     padding: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
 }
 .products_preview p {
     margin-block: 1em;
