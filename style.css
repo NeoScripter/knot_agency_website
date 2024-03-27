@@ -298,7 +298,7 @@ h1, h2, h3, nav a {
 }
 
 /* Products page */
-.products_preview_wrapper {
+.products_preview_wrapper, .news_preview_wrapper {
     background-color: var(--grey-bg);
     padding: 1em;
     margin-bottom: 3em;
