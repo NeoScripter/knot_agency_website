@@ -217,6 +217,7 @@ h1, h2, h3, nav a {
     margin-inline: auto;
     background-color: var(--grey-bg);
     border-radius: 10px;
+    text-align: center;
 }
 
 .section_image {
