@@ -326,6 +326,7 @@ h1, h2, h3, nav a {
 
 .main_page_link {
     color: var(--sky-color);
+    text-underline-offset: 2px;
 }
 
 .main_page_link:hover, .main_page_link:focus {
